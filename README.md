@@ -1,4 +1,4 @@
-# openx-recruitment-task
+# OpenX recruitment task
 Predicting forest cover type from cartographic data
 
 **simple_models.py** file contains a heuristic function which uses connection between tree type and elevation.  
@@ -8,7 +8,7 @@ Predicting forest cover type from cartographic data
 **api.py** - simple rest api which allows to choose model and predict cover type class
 
 ## Data
-In folder ‘data’ are original files with dataset downloaded from UCI Machine Learning Repository: Covertype Data Set. There are also prepared datasets for models training, testing and validation.
+In folder ‘data’ are original files with dataset downloaded from [UCI Machine Learning Repository: Covertype Data Set](https://archive.ics.uci.edu/ml/datasets/Covertype). There are also prepared datasets for models training, testing and validation.
 
 ## Preparation
 Folder ‘preparation’ contains code used to prepare data and models.
