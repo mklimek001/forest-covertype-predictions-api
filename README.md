@@ -24,7 +24,7 @@ Folder ‘models’ contain prepared models.
 
 
 ## Conclusions
-![accuracy]()
+![accuracy](https://raw.githubusercontent.com/mklimek001/openx-recruitment-task/main/plots/classification_accuracy.png)
 Machine learning models are definitely better than simple heuristic. Their accuracy of each model is very similar. 
 - K nearest neighbors classifier - 72,43%
 - Random forest classifier - 73,21%
