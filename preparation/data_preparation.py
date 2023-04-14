@@ -28,22 +28,38 @@ df_raw = pd.read_csv('../data/covtype.data', sep=',', header=None, names=names)
 X_train = df_raw.iloc[: 11340].copy()
 y_train = X_train.pop('Cover_Type')
 
-X_valid = df_raw.iloc[11340: 11340+3780].copy()
+X_valid = df_raw.iloc[11340: 11340 + 3780].copy()
 y_valid = X_valid.pop('Cover_Type')
 
 # data normalization
 scaler = MinMaxScaler()
 scaler.fit(X_train)
 X_train_normalized = pd.DataFrame(scaler.transform(X_train), columns=X_train.columns)
-X_test_normalized = pd.DataFrame(scaler.transform(X_valid), columns=X_valid.columns)
+X_valid_normalized = pd.DataFrame(scaler.transform(X_valid), columns=X_valid.columns)
 
 joblib.dump(scaler, '../models/scaler.save')
 
-train = X_train.copy()
-valid = X_valid.copy()
+train = X_train_normalized.copy()
+valid = X_valid_normalized.copy()
 
-train['Cover_Type'] = y_train
-valid['Cover_Type'] = y_valid
+train['Cover_Type'] = y_train.values
+valid['Cover_Type'] = y_valid.values
 
-valid.to_csv('../data/valid.csv')
 train.to_csv('../data/train.csv')
+valid.to_csv('../data/valid.csv')
+
+
+# preparing dataset for tests (same number of samples from every class)
+potentially_to_test = df_raw.iloc[11340 + 3780:]
+minimal = len(df_raw)
+
+for i in range(1, 8):
+    minimal = min(len(potentially_to_test[potentially_to_test['Cover_Type'] == i]), minimal)
+
+test_selection = []
+
+for i in range(1, 8):
+    test_selection.append(potentially_to_test[potentially_to_test['Cover_Type'] == i][:minimal].copy())
+
+test = pd.concat(test_selection)
+test.to_csv('../data/test.csv')
