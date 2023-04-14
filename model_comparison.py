@@ -24,6 +24,7 @@ y_pred_kn = model_kn.predict(X_test)
 
 nn_predictions = model_nn.predict(X_test)
 y_pred_nn = nn_predictions.argmax(axis=-1)
+
 y_pred_h = []
 
 for index, row in X_test.iterrows():
