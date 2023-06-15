@@ -1,4 +1,4 @@
-# OpenX recruitment task
+# Forest covertype predictions API with different ML models
 Predicting forest cover type from cartographic data
 
 **simple_models.py** file contains a heuristic function which uses connection between tree type and elevation.  
