@@ -24,14 +24,14 @@ Folder ‘models’ contain prepared models.
 
 
 ## Conclusions
-![accuracy](https://raw.githubusercontent.com/mklimek001/openx-recruitment-task/main/plots/classification_accuracy.png)
+![accuracy](https://raw.githubusercontent.com/mklimek001/forest-covertype-predictions-api/main/plots/classification_accuracy.png)
 Machine learning models are definitely better than simple heuristic. Their accuracy of each model is very similar. 
 - K nearest neighbors classifier - 72,43%
 - Random forest classifier - 73,21%
 - Simple neural network - 74,54 %
 
 Thanks to confusion matrices we know, that every model has a huge problem with proper detection of class 1 (Spruce/Fir). It is almost always classified as 2 (Lodgepole Pine). Also class 3 is often classified as 6, 7 as 1, 5 as 2 and 5 as 2. 
-![confusion_matrix](https://raw.githubusercontent.com/mklimek001/openx-recruitment-task/main/plots/heuristic_confusion_martix.png)
-![confusion_matrix](https://raw.githubusercontent.com/mklimek001/openx-recruitment-task/main/plots/knn_confusion_matrix.png)
-![confusion_matrix](https://raw.githubusercontent.com/mklimek001/openx-recruitment-task/main/plots/random_forest_confusion_matrix.png)
-![confusion_matrix](https://raw.githubusercontent.com/mklimek001/openx-recruitment-task/main/plots/nn_confusion_martix.png)
+![confusion_matrix](https://raw.githubusercontent.com/mklimek001/forest-covertype-predictions-api/main/plots/heuristic_confusion_martix.png)
+![confusion_matrix](https://raw.githubusercontent.com/mklimek001/forest-covertype-predictions-api/main/plots/knn_confusion_matrix.png)
+![confusion_matrix](https://raw.githubusercontent.com/mklimek001/forest-covertype-predictions-api/main/plots/random_forest_confusion_matrix.png)
+![confusion_matrix](https://raw.githubusercontent.com/mklimek001/forest-covertype-predictions-api/main/plots/nn_confusion_martix.png)
